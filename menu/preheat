@@ -1,0 +1,76 @@
+; Duet 12864 Menu Files
+;
+; This is a set of menu files for running a 12864 display with a duet3D control board.
+;
+; Written by Jadon Miller - 2/27/2019
+; Partially adapted from the work of tinkerlifeprojects on Github.
+;
+; File "preheat"
+;
+; The goal of this menu is to make it easy to preheat the printer. It
+; has a group of buttons to set the temperature and the current temperatures
+; at the bottom with a shortcut to print/resume.
+;
+; Note: To modify the preset temperatures, there are two places to change for
+; each temperature. The "T" parameter determines what is shown on the button
+; and the number after the "S" is the temperature sent to the firmware. For example,
+; if I wanted to change the second bed heater button to 45C, I would change this line:
+; 
+; button C46 W19 T"40" A"M140 S40"
+;
+; To this line:
+;
+; button C46 W19 T"45" A"M140 S45"
+;
+; The hotend buttons work the same way.
+;
+; Note: you may need to change the gcode commands for each button if you don't use the
+; default heater configuration.
+
+
+
+; --------------- Header ---------------
+text R0 C0 W63 F0 H1 T"Preheat"
+image L"imgs/vline.img"
+button W64 F0 T"Back" A"return"
+image R11 C0 L"imgs/hline.img"
+
+
+; --------------- Preheat Bed ---------------
+image R14 C6 L"imgs/bed.img"
+button C23 W22 T"Off" A"M140 S0"
+button C46 W19 T"60" A"M140 S60"
+button C66 W19 T"80" A"M140 S80"
+button C86 W19 T"110" A"M140 S110"
+button C106 W19 T"125" V3 A"M140 S125"
+
+
+; --------------- Preheat Hotend ---------------
+image R27 C6 L"imgs/temp.img"
+button C23 W22 T"Off" A"M104 S0 T0"
+button C46 W19 T"200" A"M104 S200 T0"
+button C66 W19 T"250" A"M104 S250 T0"
+button C86 W19 T"300" A"M104 S300 T0"
+button C106 W19 T"450" A"M104 S450 T0"
+
+
+; --------------- Print Button---------------
+; The "print" button is shown when not printing and "resume" when paused.
+button R40 C0 W128 V5 T"Print" A"menu selectSD"
+button R40 C0 W128 V6 T"Resume" A"M24|menu main"
+
+
+; --------------- Temperatures ---------------
+image R52 C0 L"imgs/hline.img"
+
+; Bed Temperature
+image R53 C5 L"imgs/bed.img"
+value H2 N180
+text T"/"
+value N80
+
+; Hotend Temperature
+image R53 L"imgs/temp.img"
+value H2 N100
+text T"/"
+value N0
