@@ -14,20 +14,21 @@ var Average=0
 var Lowest=0
 var Highest=0
 
-; If the printer hasn't been homed, home it
-if !move.axes[0].homed || !move.axes[1].homed || !move.axes[2].homed
+if !move.axes[0].homed || !move.axes[1].homed || !move.axes[2].homed		; if the printer hasn't been homed, home it
   G28
 else
-	G1 Z{sensors.probes[0].diveHeight} F360 ; if axes homed move to dive height
+	G1 Z{sensors.probes[0].diveHeight} F360 								; if axes homed move to dive height
 
-M561 ; clear any bed transform
+M561 																		; clear any bed transform
 
-M290 R0 S0 ; clear babystepping
+M290 R0 S0 																	; clear babystepping
 
-; move nozzle to centre of bed
-G1 X{(move.axes[0].min + move.axes[0].max)/2} Y{(move.axes[1].min + move.axes[1].max)/2} F3600
+G1 X{(move.axes[0].min + move.axes[0].max)/2} Y{(move.axes[1].min + move.axes[1].max)/2} F3600		; move nozzle to centre of bed
 
-M564 S0 H0 ; Allow movement beyond limits
+M564 S0 H0 																	; Allow movement beyond limits
+
+M568 P0 S175 A2             												; Set the nozzle temperature to 175 degrees
+M116 P0                     												; Wait for the nozzle to reach temperature
 
 ;ensure you have room for the probe
 if move.axes[2].machinePosition < sensors.probes[0].diveHeight
@@ -37,6 +38,9 @@ if move.axes[2].machinePosition < sensors.probes[0].diveHeight
 M291 P"Jog nozzle to touch bed" R"Set nozzle to zero" S3 Z1
 
 G92 Z0 ; set Z position to zero
+
+M568 P0 S0 A0               												; Turn the hotend off
+
 M291 P"Press OK to begin" R"Ready?" S3;
 
 ; Move probe over top of same point that nozzle was when zero was set

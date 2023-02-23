@@ -17,20 +17,21 @@ var Highest=0
 if !move.axes[0].homed || !move.axes[1].homed || !move.axes[2].homed
   G28
 else
+	G1 X{(move.axes[0].min + move.axes[0].max)/2} Y{(move.axes[1].min + move.axes[1].max)/2} F3600 ; move nozzle to centre of bed
 	G1 Z{sensors.probes[1].diveHeight} F360 ; if axes homed move to dive height
 
 M561 ; clear any bed transform
 
 M290 R0 S0 ; clear babystepping
 
-; move nozzle to centre of bed
-G1 X{(move.axes[0].min + move.axes[0].max)/2} Y{(move.axes[1].min + move.axes[1].max)/2} F3600
-
 M564 S0 H0 ; Allow movement beyond limits
 
 ;ensure you have room for the probe
 if move.axes[2].machinePosition < sensors.probes[1].diveHeight
 	G1 Z{sensors.probes[1].diveHeight}
+
+M568 P0 S175 A2             							; Set the nozzle temperature to 175 degrees
+M116 P0                     							; Wait for the nozzle to reach temperature
 
 ; Jog head to position
 M291 P"Jog nozzle to touch bed" R"Set nozzle to zero" S3 Z1
@@ -40,7 +41,7 @@ M291 P"Press OK to begin" R"Ready?" S3;
 
 ; Move probe over top of same point that nozzle was when zero was set
 G1 Z{sensors.probes[1].diveHeight}; lift head
-G1 X120.5 Y2 F1800
+G1 X235 Y355.6 F1800
 
 echo "Current probe offset = " ^ sensors.probes[1].triggerHeight ^ "mm"
 
@@ -88,3 +89,5 @@ G1 Z{sensors.probes[1].diveHeight} F360 ; move head back to dive height
 
 M291 P{"Trigger height set to : " ^ sensors.probes[1].triggerHeight  ^ " OK to save to config-overide.g, cancel to use until next restart"} R"Finished" S3
 M500 P31 ; optionally save result to config-overide.g
+
+M568 P0 S0 A0               							; Turn the hotend off
