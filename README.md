@@ -4,6 +4,10 @@ This set of config files assumes that the firmware has been updated to at least 
 
 # Changelog
 
+## Version 1.1.1
+
+* Fix typo in pause.g
+
 ## Version 1.1
 
 * Add daemon.g file to control electronics bay fan depending on whether X/Y/Z are energised
