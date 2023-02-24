@@ -4,6 +4,10 @@ This set of config files assumes that the firmware has been updated to at least 
 
 # Changelog
 
+## Version 1.1.2
+
+* Typo in screen.g
+
 ## Version 1.1.1
 
 * Fix typo in pause.g
