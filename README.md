@@ -4,6 +4,10 @@ This set of config files assumes that the firmware has been updated to at least 
 
 # Changelog
 
+## Version 1.1
+
+* Add daemon.g file to control electronics bay fan depending on whether X/Y/Z are energised
+
 ## Version 1
 
 * The coordinate system has been flipped so 0,0 is now in the front left rather than the back right. All files that use coordinates have been updated accordingly
