@@ -4,6 +4,11 @@ This set of config files assumes that the firmware has been updated to at least 
 
 # Changelog
 
+## Version 1.2
+
+* Add filaments folder
+* change screen.g to use bitbanged neopixels and swap the flashing to the button rather than the screen
+
 ## Version 1.1.2
 
 * Typo in screen.g
