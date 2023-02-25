@@ -4,6 +4,19 @@ This set of config files assumes that the firmware has been updated to at least 
 
 # Changelog
 
+## Version 1.3
+
+* All firmware files moved into a folder called Config
+* config.g Chamber Fan frequency changed from 500 to 40
+* config.g Added call to globals.g
+* Added globals.g
+* Added start_print.g this is used by the slicer profiles to pass parameters through to the firmware.
+* Added stop.g which is called at the end of the print.
+* Use of BtnCmd to control print parameters. Please see the readme in the BtnCmd folder for instructions.
+* Added Prusa Slicer Profile
+* removed DWC files
+* added 25% and 75% air filtration macros
+
 ## Version 1.2
 
 * Add filaments folder
