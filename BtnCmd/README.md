@@ -1,7 +1,7 @@
 # BtnCmd
 
 As part of version 1.3, a custom BtnCmd screen has been created to allow some aspects of a print to be adjusted.
-
+![Print Control Screen](./Images/Screenshot.png)
 This screen allows for the following items to be changed or overriden.
 
 ## Installing BtnCmd
@@ -13,14 +13,19 @@ Instructions for installing a plugin can be found [here](https://github.com/Mint
 
 Download the BtnCmdforTroodonV2.json file from this folder.  
 Click on the show settings button.  
+![Show Settings](./Images/Show_Settings.png)
 Click on the backup/restore button.  
+![Backup/Restore Settings](./Images/Restore_Settings.png)
 Click on the import button.  
+![Import](./Images/Import.png)
 Follow the popup instructions, uploading the BtnCmdforTroodonV2.json file you downloaded
 
 ## Create a backup that auto restores
 
 Click on the backup/restore button.  
+![Backup/Restore Settings](./Images/Restore_Settings.png)
 Click on the backup button.  
+![Backup](./Images/Backup.png)
 Navigate to the system folder using the left hand bar in DWC.  
 Rename "BtnCmdSettings.json" to "BtnCmdAutoRestore.json"  
 
