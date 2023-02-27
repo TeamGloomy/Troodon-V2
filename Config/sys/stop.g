@@ -19,5 +19,5 @@ G92 E0																									; reset extrusion position
 M98 P"0:/macros/LED/LED OFF"																		    ; turn off LED
 M98 P"0:/macros/Air filtration/Air filtration OFF"														; turn off Chamber Fan if on
 M84 																									; steppers off
-set global.slicerExtruderTempOverride = 0																; reset extruder temp override
+set global.slicerHotendTempOverride = 0																; reset extruder temp override
 set global.slicerBedTempOverride = 0																	; reset bed temp override

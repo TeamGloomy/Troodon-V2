@@ -6,6 +6,10 @@ This set of config files assumes that the firmware has been updated to at least 
 
 # Changelog
 
+# Version 1.3.1
+
+* fix variable in stop.g
+
 ## Version 1.3
 
 * All firmware files moved into a folder called Config
