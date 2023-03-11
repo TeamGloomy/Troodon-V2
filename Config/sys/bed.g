@@ -1,9 +1,10 @@
 ; bed.g taken from the teamgloomy wiki
-; version 1.01
 if !move.axes[0].homed || !move.axes[1].homed	                                    ; If the printer hasn't been homed, home it
 	G28 XY	                                                                        ; home y and x
-G28 Z			                                                                        ; home z
-M561							                                                                ; clear any bed transform
+G29 S2                                                                            ; turn off bed mesh levelling
+M561                                                                              ; clear any bed transform
+M290 R0 S0                                                                        ; clear babystepping
+G28 Z			                                                                  ; home z
 M558 K0 H10                                                                       ; set toolhead probe dive height to 10mm
 G30 P0 X9 Y30 Z-99999                                                             ; probe front left
 G30 P1 X9 Y350 Z-99999                                                            ; prove back left

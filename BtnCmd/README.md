@@ -35,19 +35,31 @@ Rename "BtnCmdSettings.json" to "BtnCmdAutoRestore.json"
 
 This sets the time (in seconds) for the printer to soak for before a print is started. The default is 900 and is set in /sys/globals.g
 
+## Cancel Print During Soak Time
+
+Allows you to cancel a print during the soak time.
+
 ## Soak Time Override
 
-This overrides whether the soak time is applied during a print. False = it is not overriden, True = it is overriden and the print is started without being soaked.
+This overrides whether the soak time is applied during a print. False = it is not overriden, True = it is overriden and the print is started without being soaked. It also allows you to cancel the soak time whilst the printer is soaking.
+
+## Slicer Bed Temperature Override
+
+This allows you to override the bed temperature set by the slicer.  
+If the value is set to 0, then the slicer temperature is used. If any other value is used, that is used instead. This allows for the sliced file temperature to be changed without editing or reslicing the file. 
 
 ## Slicer Hotend Temperature Override
 
 This allows you to override the hotend temperature set by the slicer.  
 If the value is set to 0, then the slicer temperature is used. If any other value is used, that is used instead. This allows for the sliced file temperature to be changed without editing or reslicing the file.  
 
-## Slicer Bed Temperature Override
+## Nozzle Diameter
 
-This allows you to override the bed temperature set by the slicer.  
-If the value is set to 0, then the slicer temperature is used. If any other value is used, that is used instead. This allows for the sliced file temperature to be changed without editing or reslicing the file. 
+At the start of a print, the firmware checks whether the nozzle diameter in the gcode matches the nozzle diameter in the gcode.
+
+## Nozzle Probe Temperature
+
+This is the temperature that is used for activities such as the probe offset and autoz offset.
 
 ## Override Turning Bed Off
 
@@ -57,6 +69,3 @@ This is useful if you are carrying out multiple concurrent prints as it keeps th
 
 This is useful if you are carrying out multiple concurrent prints and want the hotend to remain on after the print.  
 
-## Nozzle Diameter
-
-At the start of a print, the firmware checks whether the nozzle diameter in the gcode matches the nozzle diameter in the gcode. This allows the default 

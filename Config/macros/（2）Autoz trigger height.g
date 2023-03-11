@@ -30,7 +30,7 @@ M564 S0 H0 ; Allow movement beyond limits
 if move.axes[2].machinePosition < sensors.probes[1].diveHeight
 	G1 Z{sensors.probes[1].diveHeight}
 
-M568 P0 S175 A2             							; Set the nozzle temperature to 175 degrees
+M568 P0 S{global.nozzleProbeTemperature} A2             							; Set the nozzle temperature to 175 degrees
 M116 P0                     							; Wait for the nozzle to reach temperature
 
 ; Jog head to position

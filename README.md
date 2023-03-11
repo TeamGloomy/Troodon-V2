@@ -6,6 +6,24 @@ This set of config files assumes that the firmware has been updated to at least 
 
 # Changelog
 
+# Version 1.4
+
+* AutoZ.g updated to use global.nozzleProbeTemperature and to allow the macro to be called if heating of the nozzle has already happened
+* Globals.g added global.nozzleProbeTemperature and global.Cancelled. Changed soakTime from 900 to 15 as its now in minutes
+* Nozzle-clean.g updated to use global.nozzleProbeTemperature and to allow the macro to be called if heating of the nozzle has already happened
+* BtnCmd Import file updated to fix colours in dark mode and add global.nozzleProbeTemperature
+* screen.g remove redundant X2
+* start_print.g changed method of soak delay (Thanks @OwenD from forum.duet3d.com), added way of cancelling print.
+* added start_after_delay.g
+* stop.g add temp check before retract
+* daemon.g fix homing check
+* bed.g add turn off mesh levelling and clear babystepping
+* homex.g and homey.g updated to check endstop status etc before movement
+* added start.g with filament check
+* (1)Probe trigger height.g macro - updated to use global.nozzleProbeTemperature
+* (2)Autoz trigger height.g macro - updated to use global.nozzleProbeTemperature
+* save_babystep.g macro added
+
 # Version 1.3.1
 
 * fix variable in stop.g

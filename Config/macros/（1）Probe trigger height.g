@@ -27,7 +27,7 @@ G1 X{(move.axes[0].min + move.axes[0].max)/2} Y{(move.axes[1].min + move.axes[1]
 
 M564 S0 H0 																	; Allow movement beyond limits
 
-M568 P0 S175 A2             												; Set the nozzle temperature to 175 degrees
+M568 P0 S{global.nozzleProbeTemperature} A2             					; Set the nozzle temperature to 175 degrees
 M116 P0                     												; Wait for the nozzle to reach temperature
 
 ;ensure you have room for the probe
