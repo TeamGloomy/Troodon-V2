@@ -6,6 +6,13 @@ This set of config files assumes that the firmware has been updated to at least 
 
 # Changelog
 
+# Version 1.5
+
+* config.g added firmware retraction, increased PA from 0.02 to 0.045, reduced default steps/per mm for extruder to 417
+* Renamed some folders to remove spaces
+* Added Cura Slicer Profile
+* Added some STL files
+
 # Version 1.4
 
 * AutoZ.g updated to use global.nozzleProbeTemperature and to allow the macro to be called if heating of the nozzle has already happened

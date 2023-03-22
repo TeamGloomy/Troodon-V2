@@ -30,7 +30,7 @@ M569 P4 S1                                              ; physical drive 4 goes 
 M569 P5 S0                                              ; physical drive 5 goes forwards using default driver timings
 M569 P6 S1                                              ; physical drive 6 goes forwards using default driver timings
 M350 X16 Y16 Z16 E16 I1                                 ; configure microstepping with interpolation
-M92 X80.00 Y80.00 Z400.00 E432.00                       ; set steps per mm
+M92 X80.00 Y80.00 Z400.00 E417.00                       ; set steps per mm
 M566 X300 Y300 Z240 E300                                ; maximum instantaneous speed changes (mm/min) (jerk)
 M203 X30000 Y30000 Z4000 E5000                          ; maximum speeds (mm/min)
 M201 X2000 Y2000 Z650 E3200	                            ; accelerations
@@ -88,8 +88,11 @@ G10 P0 R0 S0                                            ; set initial tool 0 act
 ;#################### Filament Sensor ###################
 M591 D0 P1 C"e0stop" S1                                 ; define the filament sensor for D0
 
+;#################### Firmware Retraction ###############
+M207 S0.5 F1800 Z0.2									; 0.5mm retraction, 0.2mm Z hop
+
 ;#################### Pressure Advance ##################
-M572 D0 S0.02                                           ; define pressure advance for D0
+M572 D0 S0.045                                          ; define pressure advance for D0
 
 ;#################### 12864 Screen ######################
 M98 P"screen.g"                                         ; run screen.g
