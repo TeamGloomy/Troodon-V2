@@ -36,6 +36,8 @@ if global.Cancelled = true                                                  ; al
 	abort "Print cancelled."
 else  
   G32                                                                       ; level the gantry
+  M98 P"Nozzle-clean.g"														; clean nozzle
+  M98 P"AutoZ.g"															; use AutoZ to set Z height
 G29 S1                                                                      ; load the height map
 
 if global.slicerHotendTempOverride == 0										                  ; check whether the hotend temperature should be overriden
@@ -43,3 +45,4 @@ if global.slicerHotendTempOverride == 0										                  ; check wheth
 else
   M568 P0 S{global.slicerHotendTempOverride} A2							                ; set hotend temperature to the override temperature set in btncmd instead
 M116 P0                                                                     ; wait for this temperature to be reached
+M98 P"Nozzle-clean.g"														; clean nozzle

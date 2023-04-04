@@ -6,6 +6,16 @@ This set of config files assumes that the firmware has been updated to at least 
 
 # Changelog
 
+# Version 1.5.1
+
+* Nozzle-clean.g add a bit more wait code for temperature
+* start_print.g added Nozzle-clean.g and AutoZ.g
+* AutoZ.g updated to use global.nozzleProbeTemperature
+* cura profile added readme for start and end codes
+* Added zip to make it easy to initially upload the new config
+* rename "（1）Probe trigger height.g" to "1 - Probe trigger height.g"
+* rename "（2）Autoz trigger height.g" to "2 - Autoz trigger height.g"
+
 # Version 1.5
 
 * config.g added firmware retraction, increased PA from 0.02 to 0.045, reduced default steps/per mm for extruder to 417
@@ -86,3 +96,20 @@ This set of config files assumes that the firmware has been updated to at least 
 * nozzle-clean.g heats up hotend before cleaning
 * pause.g retraction increased from 0.5 to 2mm and tool moves to front centre of the machine
 * resume.g priming of nozzle increased from 0.5 to 2mm
+
+# Initial Upgrade Instructions
+
+Upload the latest stable version of reprapfirmware from [here](https://github.com/gloomyandy/RepRapFirmware/releases/latest/) selecting the asset with firmware-stm32f4-wifi in the name.  
+Click on the System tab and then the Upload System Files button.  
+![Show Settings](./Images/upload.png)  
+Find the firmware file you downloaded, select it and then click open.  
+When asked, apply the update.  
+Upload the latest stable version of DuetWebControl from [here](https://github.com/Duet3D/DuetWebControl/releases/latest/) selecting the asset called DuetWebControl-SD.zip. Make sure that the version number is the same as the firmware file you downloaded above. If it isn't, click on releases and find the correct version.
+![Show Settings](./Images/releases.png) 
+Like above, click on the System tab and then the Upload System Files button, find the DuetWebControl-SD.zip file and click open. DWC (DuetWebControl) will automatically unzip the files and refresh the page when complete.  
+Download the config zip file from [here](https://github.com/TeamGloomy/Troodon-V2/releases/latest/).  
+Like above, click on the System tab and then the Upload System Files button, find the downloaded config zip file and click open. DWC (DuetWebControl) will automatically unzip the files. When asked, restart the machine.  
+
+# Updating an already converted machine
+
+Either upload the latest release zip file (be aware that this will overwrite any of the files included in the base config) or manually make the adjustments as detailed in each commit.

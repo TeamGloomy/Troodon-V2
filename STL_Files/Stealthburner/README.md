@@ -2,6 +2,7 @@
 
 These files replace the stock stealthburner files and allow the use of stock toolhead PCB
 The modified files for the PCB are taken from here https://github.com/MotorDynamicsLab/LDOVoron2/tree/main/STLs/LDOSBCW2MountCover/deprecated
+**Use button head screws when mounting the PCB spacer**
 
 ## Files to choose
 

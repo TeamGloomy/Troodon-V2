@@ -4,6 +4,8 @@ if tools[0].active[0] < {global.nozzleProbeTemperature}         ; check if the h
     M568 P0 S{global.nozzleProbeTemperature} A2                 ; if cold set the nozzle temperature to 175 degrees
     M116 P0                                                     ; wait for the nozzle to reach temperature
     set var.thisMacroHeatOn = true                              ; set variable to show this macro set the temp
+if heat.heaters[1].current < tools[0].active[0]
+    M116 P0
 G90                                                             ; make sure the printer is set to absolute
 G1 X270 Y352 F6000                                              ; move into position
 G1 Z0.5 F3000                                                   ; lower z
