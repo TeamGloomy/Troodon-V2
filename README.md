@@ -115,6 +115,7 @@ Upload the latest stable version of DuetWebControl from [here](https://github.co
 Like above, click on the System tab and then the Upload System Files button, find the DuetWebControl-SD.zip file and click open. DWC (DuetWebControl) will automatically unzip the files and refresh the page when complete.  
 Download the config zip file from [here](https://github.com/TeamGloomy/Troodon-V2/releases/latest/).  
 Like above, click on the System tab and then the Upload System Files button, find the downloaded config zip file and click open. DWC (DuetWebControl) will automatically unzip the files. When asked, restart the machine.  
+Delete the G31 lines out of config-override.g and rerun the probe and autoz offset macros.    
 
 # Updating an already converted machine
 
