@@ -6,6 +6,12 @@ This set of config files assumes that the firmware has been updated to at least 
 
 # Changelog
 
+# Version 1.5.2
+
+* start_print.g make AutoZ controllable by a global
+* globals.g added global.useAutoZ
+* updated btncmd layout to add useAutoZ
+
 # Version 1.5.1
 
 * Nozzle-clean.g add a bit more wait code for temperature

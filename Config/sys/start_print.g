@@ -37,7 +37,8 @@ if global.Cancelled = true                                                  ; al
 else  
   G32                                                                       ; level the gantry
   M98 P"Nozzle-clean.g"														; clean nozzle
-  M98 P"AutoZ.g"															; use AutoZ to set Z height
+  if global.useAutoZ = true													; check for use AutoZ
+	M98 P"AutoZ.g"															; use AutoZ to set Z height
 G29 S1                                                                      ; load the height map
 
 if global.slicerHotendTempOverride == 0										                  ; check whether the hotend temperature should be overriden
