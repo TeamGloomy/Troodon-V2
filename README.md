@@ -6,6 +6,12 @@ This set of config files assumes that the firmware has been updated to at least 
 
 # Changelog
 
+# Version 1.5.2-TAP
+* remove AutoZ.g and corresponding calls
+* config.g changes probe offsets for TAP and e-steps for CW2
+* homez.g add nozzle heatup for TAP
+* bed.g add params to homez call
+
 # Version 1.5.2
 
 * start_print.g make AutoZ controllable by a global

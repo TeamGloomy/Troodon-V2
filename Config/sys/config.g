@@ -30,7 +30,7 @@ M569 P4 S1                                              ; physical drive 4 goes 
 M569 P5 S0                                              ; physical drive 5 goes forwards using default driver timings
 M569 P6 S1                                              ; physical drive 6 goes forwards using default driver timings
 M350 X16 Y16 Z16 E16 I1                                 ; configure microstepping with interpolation
-M92 X80.00 Y80.00 Z400.00 E417.00                       ; set steps per mm
+M92 X80.00 Y80.00 Z400.00 E710                          ; set steps per mm
 M566 X300 Y300 Z240 E300                                ; maximum instantaneous speed changes (mm/min) (jerk)
 M203 X30000 Y30000 Z4000 E5000                          ; maximum speeds (mm/min)
 M201 X2000 Y2000 Z650 E3200	                            ; accelerations
@@ -39,7 +39,7 @@ M84 S30                                                 ; Set idle timeout
 
 ;#################### Axis Limits #######################
 M208 X0 Y0 Z0 S1                                        ; set axis minima
-M208 X355 Y357 Z320 S0                                  ; set axis maxima
+M208 X348 Y353 Z320 S0                                  ; set axis maxima
 M671 X-50:-50:405:405 Y-75:355:355:-75 S20              ; set gantry pivot points
 
 ;#################### Endstops ##########################
@@ -48,7 +48,7 @@ M574 Y2 S1 P"ystop"                                     ; configure switch-type 
 
 ;#################### Print Head Probe ##################
 M558 K0 P5 C"probe" T12000 F300:120 H10 A10 S0.01       ; configure the probe on the print head
-G31 K0 P500 X0 Y25 Z3                                   ; set Z probe X, Y and Z offsets
+G31 K0 P500 X0 Y0 Z-0.5                                   ; set Z probe X, Y and Z offsets
 M557 X10:345 Y10:330 P10                                ; define mesh grid
 
 ;#################### Nozzle Probe ######################

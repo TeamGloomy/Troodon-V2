@@ -22,5 +22,3 @@ if !exists(global.nozzleProbeTemperature)									; checks for the existence of 
 	global nozzleProbeTemperature = 175										; if it doesn't exist, set the value to 175 degrees
 if !exists(global.Cancelled)												; checks for the existence of global.Cancelled
 	global Cancelled = false                                                ; if it doesn't exist, set the value to false
-if !exists(global.useAutoZ)													; checks for the existence of global.useAutoZ
-	global useAutoZ = false                                                 ; if it doesn't exist, set the value to false
