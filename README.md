@@ -6,6 +6,10 @@ This set of config files assumes that the firmware has been updated to at least 
 
 # Changelog
 
+# Version 1.5.3
+* stop.g fix error with temp check
+* Nozzle-Clean.g change Y position by 4mm
+
 # Version 1.5.2-TAP
 * remove AutoZ.g and corresponding calls
 * config.g changes probe offsets for TAP and e-steps for CW2

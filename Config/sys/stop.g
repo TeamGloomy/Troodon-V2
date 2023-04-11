@@ -4,7 +4,7 @@
 M106 P0 S0																								; turn off the print cooling fan
 M220 S100 																								; reset speed factor override percentage to 100%
 M221 D0 S100																							; reset extrude factor override percentage to 100%
-if heat.heaters[1].current > heat.heaters[1].current													; check extruder is hot enough to retract
+if heat.heaters[1].current > heat.coldRetractTemperature													; check extruder is hot enough to retract
 	G1 E-2 F300 																						; retract the filament a bit before lifting the nozzle to release some of the pressure
 G90 																									; absolute positioning
 if {(move.axes[2].machinePosition) < (move.axes[2].max - 10)} 											; check if there's sufficient space to raise head
