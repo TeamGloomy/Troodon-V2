@@ -7,7 +7,7 @@ if tools[0].active[0] < {global.nozzleProbeTemperature}         ; check if the h
 if heat.heaters[1].current < tools[0].active[0]
     M116 P0
 G90                                                             ; make sure the printer is set to absolute
-G1 X270 Y352 F6000                                              ; move into position
+G1 X270 Y356 F6000                                              ; move into position
 G1 Z0.5 F3000                                                   ; lower z
 G1 X320 F10000                                                  ; clean the nozzle
 G1 X270 F10000                                                  ; clean the nozzle
