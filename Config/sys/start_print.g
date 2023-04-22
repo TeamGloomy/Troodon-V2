@@ -21,8 +21,9 @@ else
  
 M98 P"0:/macros/Air filtration/Air filtration 25%"                          ; turn on air filtration fan to 25%
 
-if !global.soakTimeOverride                                                 ; check whether the chamber temperature soak time should be overriden
-  M98 P"start_after_delay.g" S{global.soakTime}													    ; chamber Soak
+if param.B = {"ABS" || "ASA"}
+  if !global.soakTimeOverride & global.soakTime != 0                                                ; check whether the chamber temperature soak time should be overriden
+    M98 P"start_after_delay.g" S{global.soakTime}													    ; chamber Soak
 
 if global.Cancelled = true                                                  ; allows print to be cancelled at this point
   M291 P"Print has been cancelled" S0 T3
