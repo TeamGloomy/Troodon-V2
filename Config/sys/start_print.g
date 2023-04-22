@@ -21,7 +21,7 @@ else
  
 M98 P"0:/macros/Air filtration/Air filtration 25%"                          ; turn on air filtration fan to 25%
 
-if param.B = {"ABS" || "ASA"}
+if param.B = "ABS" || param.B = "ASA"
   if !global.soakTimeOverride & global.soakTime != 0                                                ; check whether the chamber temperature soak time should be overriden
     M98 P"start_after_delay.g" S{global.soakTime}													    ; chamber Soak
 
