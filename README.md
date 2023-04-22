@@ -6,6 +6,9 @@ This set of config files assumes that the firmware has been updated to at least 
 
 # Changelog
 
+# Version 1.5.5
+* start_print.g fix error with line 24
+
 # Version 1.5.4
 * start_print.g - add check for filament type and only soak if ABS or ASA - If you have more materials where the printer needs to be soaked, upload the print from your slicer and look in the gcode to see what name the filment has been given (the B parameter of the M98 P"start_print.g" line). Add this to the check on line 24 e.g. ("ABS" || "ASA") for ABS+ would become ("ABS" || "ABS+" || "ASA").
 * start_print.g - add check for whether global.soakTime is equal to 0
