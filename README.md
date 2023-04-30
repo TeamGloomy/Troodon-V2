@@ -6,6 +6,11 @@ This set of config files assumes that the firmware has been updated to at least 
 
 # Changelog
 
+# Version 1.5.6
+* bed.g adjust probe points as a couple of users had issues with gantry levelling not working
+* config.g increase minimum Y by 2mm
+* config.g increase jerk
+
 # Version 1.5.5
 * start_print.g fix error with line 24
 
