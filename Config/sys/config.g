@@ -30,8 +30,8 @@ M569 P4 S1                                              ; physical drive 4 goes 
 M569 P5 S0                                              ; physical drive 5 goes forwards using default driver timings
 M569 P6 S1                                              ; physical drive 6 goes forwards using default driver timings
 M350 X16 Y16 Z16 E16 I1                                 ; configure microstepping with interpolation
+M566 X600 Y600 Z600 E600                                ; maximum instantaneous speed changes (mm/min) (jerk)
 M92 X80.00 Y80.00 Z400.00 E710                          ; set steps per mm
-M566 X300 Y300 Z240 E300                                ; maximum instantaneous speed changes (mm/min) (jerk)
 M203 X30000 Y30000 Z4000 E5000                          ; maximum speeds (mm/min)
 M201 X2000 Y2000 Z650 E3200	                            ; accelerations
 M906 X1600 Y1600 Z1600 E800 I30                         ; set motor currents (mA) and motor idle factor in per cent
