@@ -40,11 +40,15 @@ else
   M98 P"Nozzle-clean.g"														; clean nozzle
   if global.useAutoZ = true													; check for use AutoZ
 	M98 P"AutoZ.g"															; use AutoZ to set Z height
-G29 S1                                                                      ; load the height map
 
-if global.slicerHotendTempOverride == 0										                  ; check whether the hotend temperature should be overriden
+if global.levelBed = true                                                  ; allows bed mesh to be selectively generated/loaded
+  G29																		  ; generate height map
+else                           
+  G29 S1                                                                      ; load existing height map
+
+if global.slicerHotendTempOverride == 0										  ; check whether the hotend temperature should be overriden
   M568 P0 S{param.C} A2		                                                  ; set hotend Temperature to whatever is set in slicer
 else
-  M568 P0 S{global.slicerHotendTempOverride} A2							                ; set hotend temperature to the override temperature set in btncmd instead
+  M568 P0 S{global.slicerHotendTempOverride} A2							    ; set hotend temperature to the override temperature set in btncmd instead
 M116 P0                                                                     ; wait for this temperature to be reached
 M98 P"Nozzle-clean.g"														; clean nozzle
