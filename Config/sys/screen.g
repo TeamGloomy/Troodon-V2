@@ -15,5 +15,14 @@ while iterations < 3                                    ; flash button 3 times
     M150 K0 R0 U255 B0 P0 S2 F1
     M150 K0 R255 U255 B255 P255 S1 F0
     G4 P250
-M150 K0 R255 U0 B0 P255 S2 F1                           ; display "ready" button state  
-M150 K0 R255 U255 B255 P255 S1 F0
+; Red colour scheme for LCD and knob	
+;M150 K0 R0 U255 B0 P255 S2 F1                           ; set LCD colour to red 
+;M150 K0 R0 U255 B0 P255 S2 F0							; set knob colour to red
+
+; Blue colour scheme for LCD and knob
+;M150 K0 R0 U0 B255 P255 S2 F1                          ; set LCD colour to blue
+M150 K0 R0 U0 B255 P255 S2 F0							; set knob colour to blue					
+
+; Green colour scheme for LCD and knob
+;M150 K0 R255 U0 B0 P255 S2 F1                          ; set LCD colour to green  
+;M150 K0 R255 U0 B0 P255 S2 F0							; set LCD knob colour to green
