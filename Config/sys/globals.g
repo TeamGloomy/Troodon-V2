@@ -24,3 +24,5 @@ if !exists(global.Cancelled)												; checks for the existence of global.Can
 	global Cancelled = false                                                ; if it doesn't exist, set the value to false
 if !exists(global.useAutoZ)													; checks for the existence of global.useAutoZ
 	global useAutoZ = false                                                 ; if it doesn't exist, set the value to false
+if !exists(global.generateMesh)												; checks for the existence of global.generateMesh
+	global generateMesh = false                                             ; if it doesn't exist, set the value to false
