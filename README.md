@@ -6,6 +6,17 @@ This set of config files assumes that the firmware has been updated to at least 
 
 # Changelog
 
+# Version 1.6
+* save_babystep.g added AutoZ offset and added check to only reset the babystepping value if not printing
+* start_print.g added the ability to generate the mesh on print start (thanks ygk3d)
+* start_print.g fixed indent warning (thanks ygk3d)
+* globals.g added global.generateMesh (thanks ygk3d) and global generatePrintOnlyMesh
+* print_area_mesh.g added the capability to probe only the print area (credit to https://github.com/MaikoHermans/RRF-PAM). Make sure both Mesh Globals are enabled
+* MaxSpeedAndAcceleration.g added this macro. See [this forum](https://forum.duet3d.com/topic/32433/determining-max-speed-and-acceleration?_=1683805101817) post for usage.
+* Updated prusasclicer and cura readme's
+* screen.g added colour options (thanks ygk3d)
+* Updated BtnCmd layouts with new globals
+
 # Version 1.5.6
 * bed.g adjust probe points as a couple of users had issues with gantry levelling not working
 * config.g increase minimum Y by 2mm

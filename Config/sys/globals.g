@@ -2,12 +2,12 @@ if !exists(global.slicerBedTemp)											; checks for the existence of global.
 	global slicerBedTemp = 0												; if it doesn't exist, set the value to 0
 if !exists(global.slicerBedTempOverride)									; checks for the existence of global.slicerBedTempOverride
 	global slicerBedTempOverride = 0										; if it doesn't exist, set the value to 0
-if !exists(global.slicerHotendTemp)										    ; checks for the existence of global.slicerHotendTemp
-	global slicerHotendTemp = 0											    ; if it doesn't exist, set the value to 0
-if !exists(global.slicerHotendTempOverride)								    ; checks for the existence of global.slicerHotendTempOverride
-	global slicerHotendTempOverride = 0									    ; if it doesn't exist, set the value to 0
+if !exists(global.slicerHotendTemp)											; checks for the existence of global.slicerHotendTemp
+	global slicerHotendTemp = 0												; if it doesn't exist, set the value to 0
+if !exists(global.slicerHotendTempOverride)									; checks for the existence of global.slicerHotendTempOverride
+	global slicerHotendTempOverride = 0										; if it doesn't exist, set the value to 0
 if !exists(global.soakTime)													; checks for the existence of global.soakTime
-	global soakTime = 15				                        			; if it doesn't exist, set the value in seconds. Value is in minutes
+	global soakTime = 15													; if it doesn't exist, set the value in seconds. Value is in minutes
 if !exists(global.soakTimeOverride)											; checks for the existence of global.soakTimeOverride
 	global soakTimeOverride = false											; if it doesn't exist, set the value to false
 if !exists(global.chamberCheckOverride)										; checks for the existence of global.chamberCheckOverride
@@ -21,8 +21,10 @@ if !exists(global.nozzleDiameterInstalled)									; checks for the existence of
 if !exists(global.nozzleProbeTemperature)									; checks for the existence of global.nozzleProbeTemperature
 	global nozzleProbeTemperature = 175										; if it doesn't exist, set the value to 175 degrees
 if !exists(global.Cancelled)												; checks for the existence of global.Cancelled
-	global Cancelled = false                                                ; if it doesn't exist, set the value to false
+	global Cancelled = false												; if it doesn't exist, set the value to false
 if !exists(global.useAutoZ)													; checks for the existence of global.useAutoZ
-	global useAutoZ = false                                                 ; if it doesn't exist, set the value to false
+	global useAutoZ = false													; if it doesn't exist, set the value to false
 if !exists(global.generateMesh)												; checks for the existence of global.generateMesh
-	global generateMesh = false                                             ; if it doesn't exist, set the value to false
+	global generateMesh = false												; if it doesn't exist, set the value to false
+if !exists(global.generatePrintOnlyMesh)									; checks for the existence of global.generatePrintOnlyMesh
+	global generatePrintOnlyMesh = false									; if it doesn't exist, set the value to false
