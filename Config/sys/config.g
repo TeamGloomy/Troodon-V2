@@ -49,7 +49,7 @@ M574 Y2 S1 P"ystop"                                     ; configure switch-type 
 ;#################### Print Head Probe ##################
 M558 K0 P5 C"probe" T12000 F300:120 H10 A10 S0.01       ; configure the probe on the print head
 G31 K0 P500 X0 Y25 Z3                                   ; set Z probe X, Y and Z offsets
-M557 X10:345 Y10:330 P10                                ; define mesh grid
+M557 X35:310 Y35:310 S55                                ; define mesh grid
 
 ;#################### Nozzle Probe ######################
 M558 K1 P8 C"zstop" T18000 F180 H5 A10 S0.0025 R0       ; configure the probe used by autoz

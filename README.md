@@ -6,6 +6,10 @@ This set of config files assumes that the firmware has been updated to at least 
 
 # Changelog
 
+# Version 1.6.1
+* config.g update mesh spacing from mesh.g
+* removed mesh.g as interacting with print_area_mesh.g
+
 # Version 1.6
 * save_babystep.g added AutoZ offset and added check to only reset the babystepping value if not printing
 * start_print.g added the ability to generate the mesh on print start (thanks ygk3d)
