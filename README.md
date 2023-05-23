@@ -6,6 +6,9 @@ This set of config files assumes that the firmware has been updated to at least 
 
 # Changelog
 
+# Version 1.6.2
+*config.g reduce stock motor current as its currently at max rather than 80% of max (thanks ygk3d)
+
 # Version 1.6.1
 * config.g update mesh spacing from mesh.g
 * removed mesh.g as interacting with print_area_mesh.g
