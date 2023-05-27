@@ -2,7 +2,7 @@
 
 This set of config files assumes that the firmware has been updated to at least 3.4.5.
 
-**WARNING** When using this config, please delete the 2 G31 lines out of your config-override.g and recalibrate your AutoZ and Toolhead Probes
+**WARNING** When using this config, please delete the 2 G31 lines out of your config-override.g and reboot. Then recalibrate your AutoZ and Toolhead Probes
 
 # Changelog
 
