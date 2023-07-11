@@ -1,3 +1,5 @@
+;#################### Version ###########################
+;The overall version of this "improved" version is 1.6.3-1
 
 ;#################### General preferences ###############
 G90                                                     ; send absolute coordinates...

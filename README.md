@@ -6,6 +6,9 @@ This set of config files assumes that the firmware has been updated to at least 
 
 # Changelog
 
+# Version 1.6.3-1
+* config.g add version number
+
 # Version 1.6.3
 * 1 - Probe trigger height.g add G32 after G28
 
