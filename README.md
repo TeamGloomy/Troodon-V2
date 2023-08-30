@@ -2,9 +2,18 @@
 
 This set of config files assumes that the firmware has been updated to at least 3.4.5.
 
-**WARNING** When using this config, please delete the 2 G31 lines out of your config-override.g and recalibrate your AutoZ and Toolhead Probes
+**WARNING** When using this config, please delete the 2 G31 lines out of your config-override.g and reboot. Then recalibrate your AutoZ and Toolhead Probes
 
 # Changelog
+
+# Version 1.6.3-1
+* config.g add version number
+
+# Version 1.6.3
+* 1 - Probe trigger height.g add G32 after G28
+
+# Version 1.6.2
+*config.g reduce stock motor current as its currently at max rather than 80% of max (thanks ygk3d)
 
 # Version 1.6.1
 * config.g update mesh spacing from mesh.g

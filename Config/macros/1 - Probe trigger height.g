@@ -19,6 +19,8 @@ if !move.axes[0].homed || !move.axes[1].homed || !move.axes[2].homed		; if the p
 else
 	G1 Z{sensors.probes[0].diveHeight} F360 								; if axes homed move to dive height
 
+G32																			; carry out gantry levelling
+
 M561 																		; clear any bed transform
 
 M290 R0 S0 																	; clear babystepping
