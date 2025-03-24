@@ -6,6 +6,9 @@ This set of config files assumes that the firmware has been updated to at least 
 
 # Changelog
 
+# Verion 1.6.4
+* change sensors.probes[#].diveHeight to sensors.probes[#].diveHeights[0]
+
 # Version 1.6.3-1
 * config.g add version number
 
