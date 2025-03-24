@@ -18,7 +18,7 @@ if !move.axes[0].homed || !move.axes[1].homed || !move.axes[2].homed
   G28
 else
 	G1 X{(move.axes[0].min + move.axes[0].max)/2} Y{(move.axes[1].min + move.axes[1].max)/2} F3600 ; move nozzle to centre of bed
-	G1 Z{sensors.probes[1].diveHeight} F360 ; if axes homed move to dive height
+	G1 Z{sensors.probes[1].diveHeights[0]} F360 ; if axes homed move to dive height
 
 M561 ; clear any bed transform
 
@@ -27,8 +27,8 @@ M290 R0 S0 ; clear babystepping
 M564 S0 H0 ; Allow movement beyond limits
 
 ;ensure you have room for the probe
-if move.axes[2].machinePosition < sensors.probes[1].diveHeight
-	G1 Z{sensors.probes[1].diveHeight}
+if move.axes[2].machinePosition < sensors.probes[1].diveHeights[0]
+	G1 Z{sensors.probes[1].diveHeights[0]}
 
 M568 P0 S{global.nozzleProbeTemperature} A2             							; Set the nozzle temperature to 175 degrees
 M116 P0                     							; Wait for the nozzle to reach temperature
@@ -40,7 +40,7 @@ G92 Z0 ; set Z position to zero
 M291 P"Press OK to begin" R"Ready?" S3;
 
 ; Move probe over top of same point that nozzle was when zero was set
-G1 Z{sensors.probes[1].diveHeight}; lift head
+G1 Z{sensors.probes[1].diveHeights[0]}; lift head
 G1 X235 Y355.6 F1800
 
 echo "Current probe offset = " ^ sensors.probes[1].triggerHeight ^ "mm"
@@ -48,7 +48,7 @@ echo "Current probe offset = " ^ sensors.probes[1].triggerHeight ^ "mm"
 ; carry out 10 probes (or what is set in NumTests variable)
 
 while iterations < var.NumTests
-	G1 Z{sensors.probes[1].diveHeight} ; move to dive height
+	G1 Z{sensors.probes[1].diveHeights[0]} ; move to dive height
 	G30 K1 S-1
 	M118 P2 S{"Test # " ^ (iterations+1) ^ " Triggered @ " ^ move.axes[2].machinePosition ^ "mm"} ; send trigger height to Paneldue console
 	M118 P3 S{"Test # " ^ (iterations+1) ^ " Triggered @ " ^ move.axes[2].machinePosition ^ "mm"} ; send trigger height to DWC console
@@ -85,7 +85,7 @@ echo "to Z" ^ var.Average
 G31 K1 P500 Z{var.Average} ; set Z probe offset to the average reading
 M564 S1 H1 ; Reset limits
 M558 K1 F{var.ProbeSpeedHigh}:{var.ProbeSpeedLow} ; reset probe speed to original
-G1 Z{sensors.probes[1].diveHeight} F360 ; move head back to dive height
+G1 Z{sensors.probes[1].diveHeights[0]} F360 ; move head back to dive height
 
 M291 P{"Trigger height set to : " ^ sensors.probes[1].triggerHeight  ^ " OK to save to config-overide.g, cancel to use until next restart"} R"Finished" S3
 M500 P31 ; optionally save result to config-overide.g
